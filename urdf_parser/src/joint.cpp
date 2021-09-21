@@ -415,6 +415,10 @@ bool parseJoint(Joint &joint, TiXmlElement* config)
     joint.type = Joint::PRISMATIC;
   else if (type_str == "fixed")
     joint.type = Joint::FIXED;
+  else if (type_str == "spherical")
+    joint.type = Joint::SPHERICAL;
+  else if (type_str == "translational")
+    joint.type = Joint::TRANSLATIONAL;
   else
   {
     CONSOLE_BRIDGE_logError("Joint [%s] has no known type [%s]", joint.name.c_str(), type_str.c_str());
